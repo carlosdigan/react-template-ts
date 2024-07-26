@@ -1,14 +1,28 @@
+import styled from "styled-components"
+import { ExpensesTable } from "./ExpensesTable"
+
 function App() {
   return (
-    <div id="template-text">
-      <h1>React Starter Template - TypeScript</h1>
-      <p>
-        For JavaScript please use{" "}
-        <a href="https://github.com/ruairidhflint/react-template">this</a>{" "}
-        template
-      </p>
-    </div>
-  );
+    <StyledApp>
+      <h1 id="expenses-header">Expenses</h1>
+      <ExpensesTable />
+    </StyledApp>
+  )
 }
 
-export default App;
+const StyledApp = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 80%;
+  margin: auto;
+
+  #expenses-header {
+    border-bottom: 1px solid black;
+    width: 100%;
+    font-size: 3rem;
+    padding-left: 20px;
+  }
+`
+export default App
